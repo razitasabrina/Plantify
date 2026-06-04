@@ -79,7 +79,6 @@
             txtNama.Name = "txtNama";
             txtNama.Size = new Size(515, 27);
             txtNama.TabIndex = 2;
-            txtNama.TextChanged += txtNama_TextChanged;
             // 
             // lblEmail
             // 
@@ -96,7 +95,6 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(239, 27);
             txtEmail.TabIndex = 4;
-            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // lblUsername
             // 
@@ -238,7 +236,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(319, 458);
             panel1.TabIndex = 19;
-            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
@@ -249,7 +246,6 @@
             pictureBox1.Size = new Size(125, 62);
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // FormRegister
             // 
@@ -280,7 +276,6 @@
             Controls.Add(lblJudul);
             Name = "FormRegister";
             Text = "FormRegister";
-            Load += FormRegister_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

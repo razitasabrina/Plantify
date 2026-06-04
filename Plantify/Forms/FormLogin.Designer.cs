@@ -54,7 +54,6 @@
             lblJudul.Size = new Size(205, 20);
             lblJudul.TabIndex = 0;
             lblJudul.Text = "Masuk ke akun Plantify-mu!";
-            lblJudul.Click += lblJudul_Click;
             // 
             // lblUsername
             // 
@@ -64,7 +63,6 @@
             lblUsername.Size = new Size(75, 20);
             lblUsername.TabIndex = 1;
             lblUsername.Text = "Username";
-            lblUsername.Click += lblUsername_Click;
             // 
             // txtUsername
             // 
