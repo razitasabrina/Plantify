@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Plantify.Controllers;
+using plantify.Controllers;
 
-namespace Plantify.Forms
+namespace plantify.Forms
 {
     public partial class FormRegister : Form
     {

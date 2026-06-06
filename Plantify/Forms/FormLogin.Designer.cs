@@ -1,4 +1,4 @@
-﻿namespace Plantify.Forms
+﻿namespace plantify.Forms
 {
     partial class FormLogin
     {
@@ -153,7 +153,7 @@
             // pctLogo
             // 
             pctLogo.BackColor = Color.Transparent;
-            pctLogo.BackgroundImage = Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
+            pctLogo.BackgroundImage = global::Plantify.Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
             pctLogo.BackgroundImageLayout = ImageLayout.Stretch;
             pctLogo.Location = new Point(649, 7);
             pctLogo.Name = "pctLogo";

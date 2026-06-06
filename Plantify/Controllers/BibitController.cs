@@ -1,9 +1,9 @@
 ﻿using System.Data;
 using Npgsql;
-using Plantify.Database;
-using Plantify.Models;
+using plantify.Database;
+using plantify.Models;
 
-namespace Plantify.Controllers
+namespace plantify.Controllers
 {
     public class BibitController
     {

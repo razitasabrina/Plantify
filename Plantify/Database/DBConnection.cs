@@ -1,12 +1,12 @@
 ﻿using System;
 using Npgsql;
 
-namespace Plantify.Database
+namespace plantify.Database
 {
     public class DBConnection
     {
         private static string connectionString =
-            "Host=localhost;Port=5432;Database=plantify_db;Username=postgres;Password=;";
+    "Host=localhost;Port=5432;Database=plantify;Username=postgres;Password=;";
 
         public static NpgsqlConnection GetConnection()
         {

@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using Plantify.Forms;
+using plantify.Forms;
 
-namespace Plantify
+namespace plantify
 {
     internal static class Program
     {

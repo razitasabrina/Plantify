@@ -1,4 +1,4 @@
-﻿namespace Plantify.Models
+﻿namespace plantify.Models
 {
     public class Customer
     {

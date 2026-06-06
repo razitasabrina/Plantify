@@ -1,7 +1,7 @@
 ﻿using Npgsql;
-using Plantify.Database;
+using plantify.Database;
 
-namespace Plantify.Controllers
+namespace plantify.Controllers
 {
     public class CustomerController
     {

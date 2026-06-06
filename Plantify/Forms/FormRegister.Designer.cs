@@ -1,4 +1,4 @@
-﻿namespace Plantify.Forms
+﻿namespace plantify.Forms
 {
     partial class FormRegister
     {
@@ -239,7 +239,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
+            pictureBox1.BackgroundImage = global::Plantify.Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(238, 343);
             pictureBox1.Name = "pictureBox1";

@@ -1,4 +1,4 @@
-﻿namespace Plantify.Forms
+﻿namespace plantify.Forms
 {
     partial class FormKatalog
     {
@@ -136,7 +136,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
+            pictureBox1.BackgroundImage = global::Plantify.Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(55, -6);
             pictureBox1.Name = "pictureBox1";
@@ -146,7 +146,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackgroundImage = Properties.Resources._657ba50e_f1b8_4521_91d4_f45c6c3e1d9b;
+            pictureBox2.BackgroundImage = global::Plantify.Properties.Resources._657ba50e_f1b8_4521_91d4_f45c6c3e1d9b;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.Location = new Point(699, 42);
             pictureBox2.Name = "pictureBox2";

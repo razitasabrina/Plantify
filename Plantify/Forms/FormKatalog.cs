@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Plantify.Controllers;
-using Plantify.Models;
+using plantify.Controllers;
+using plantify.Models;
 
-namespace Plantify.Forms
+namespace plantify.Forms
 {
     public partial class FormKatalog : Form
     {

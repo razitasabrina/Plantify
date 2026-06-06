@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using Plantify.Controllers;
-using Plantify.Models;
-using Plantify.Forms;
+using plantify.Controllers;
+using plantify.Models;
+using plantify.Forms;
 
-namespace Plantify.Forms
+namespace plantify.Forms
 {
     public partial class FormLogin : Form
     {
