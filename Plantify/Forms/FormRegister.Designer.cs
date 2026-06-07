@@ -194,6 +194,7 @@
             btnDaftar.TabIndex = 15;
             btnDaftar.Text = "Daftar";
             btnDaftar.UseVisualStyleBackColor = false;
+            btnDaftar.Click += btnDaftar_Click;
             // 
             // btnKeLogin
             // 
@@ -209,6 +210,7 @@
             btnKeLogin.TabIndex = 16;
             btnKeLogin.Text = "Masuk";
             btnKeLogin.UseVisualStyleBackColor = true;
+            btnKeLogin.Click += btnKeLogin_Click;
             // 
             // lblError
             // 
@@ -239,7 +241,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = global::Plantify.Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
+            pictureBox1.BackgroundImage = Plantify.Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(238, 343);
             pictureBox1.Name = "pictureBox1";

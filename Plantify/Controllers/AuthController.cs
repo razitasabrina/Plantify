@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using System;
+using Npgsql;
 using plantify.Database;
 using plantify.Models;
 
@@ -6,15 +7,14 @@ namespace plantify.Controllers
 {
     public class AuthController
     {
-        // Logika login — dicek ke database
         public Customer Login(string username, string password)
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = @"SELECT id, nama, email, username, alamat, no_hp 
-                                 FROM customer 
-                                 WHERE username = @username 
-                                 AND password = @password 
+                string query = @"SELECT id_user, nama_user, email, no_telepon, alamat
+                                 FROM users 
+                                 WHERE email = @username 
+                                 AND passwords = @password 
                                  LIMIT 1";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
@@ -27,12 +27,12 @@ namespace plantify.Controllers
                         if (reader.Read())
                         {
                             return new Customer(
-                                Convert.ToInt32(reader["id"]),
-                                reader["nama"].ToString(),
+                                Convert.ToInt32(reader["id_user"]),
+                                reader["nama_user"].ToString(),
                                 reader["email"].ToString(),
-                                reader["username"].ToString(),
+                                reader["email"].ToString(),
                                 reader["alamat"].ToString(),
-                                reader["no_hp"].ToString()
+                                reader["no_telepon"].ToString()
                             );
                         }
                     }

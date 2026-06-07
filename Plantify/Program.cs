@@ -1,6 +1,7 @@
+using plantify.Forms;
+using plantify.Models;
 using System;
 using System.Windows.Forms;
-using plantify.Forms;
 
 namespace plantify
 {
@@ -10,7 +11,14 @@ namespace plantify
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
+            Application.Run(
+    new FormKatalog(
+        new Customer()
+        {
+            Nama = "Razita"
+        }
+    )
+);
         }
     }
 }

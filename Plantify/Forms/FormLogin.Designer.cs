@@ -100,6 +100,7 @@
             btnLogin.TabIndex = 5;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnKeRegister
             // 
@@ -117,6 +118,7 @@
             btnKeRegister.TabIndex = 6;
             btnKeRegister.Text = "Daftar di sini";
             btnKeRegister.UseVisualStyleBackColor = false;
+            btnKeRegister.Click += btnKeRegister_Click;
             // 
             // lblError
             // 
@@ -153,7 +155,7 @@
             // pctLogo
             // 
             pctLogo.BackColor = Color.Transparent;
-            pctLogo.BackgroundImage = global::Plantify.Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
+            pctLogo.BackgroundImage = Plantify.Properties.Resources.a7e06774_5e62_4ee1_a088_40968eabf182;
             pctLogo.BackgroundImageLayout = ImageLayout.Stretch;
             pctLogo.Location = new Point(649, 7);
             pctLogo.Name = "pctLogo";

@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using Npgsql;
 using plantify.Database;
 using plantify.Models;
@@ -7,36 +9,33 @@ namespace plantify.Controllers
 {
     public class BibitController
     {
-        // Ambil semua kategori dari database
         public List<string> GetKategori()
         {
             List<string> kategoriList = new List<string>();
 
             using (var conn = DBConnection.GetConnection())
             {
-                string query = "SELECT DISTINCT kategori FROM bibit ORDER BY kategori";
+                string query = "SELECT DISTINCT jenis_bibit FROM bibit ORDER BY jenis_bibit";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
-                        kategoriList.Add(reader["kategori"].ToString());
+                        kategoriList.Add(reader["jenis_bibit"].ToString());
                 }
             }
 
             return kategoriList;
         }
 
-        // Ambil daftar bibit dengan filter keyword dan kategori
         public DataTable GetKatalog(string keyword = "", string kategori = "")
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = @"SELECT id,
+                string query = @"SELECT id_bibit,
                                  nama_bibit AS ""Nama Bibit"",
-                                 kategori AS ""Kategori"",
+                                 jenis_bibit AS ""Kategori"",
                                  TO_CHAR(harga, 'FM999,999,999') AS ""Harga (Rp)"",
-                                 stok AS ""Stok"",
-                                 satuan AS ""Satuan""
+                                 stok AS ""Stok""
                                  FROM bibit
                                  WHERE stok > 0";
 
@@ -44,7 +43,7 @@ namespace plantify.Controllers
                     query += " AND LOWER(nama_bibit) LIKE LOWER(@keyword)";
 
                 if (!string.IsNullOrEmpty(kategori) && kategori != "Semua Kategori")
-                    query += " AND kategori = @kategori";
+                    query += " AND jenis_bibit = @kategori";
 
                 query += " ORDER BY nama_bibit";
 
@@ -66,14 +65,13 @@ namespace plantify.Controllers
             }
         }
 
-        // Ambil detail satu bibit berdasarkan id
         public Bibit GetDetailBibit(int id)
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = @"SELECT nama_bibit, kategori, deskripsi, 
-                                 harga, stok, satuan 
-                                 FROM bibit WHERE id = @id";
+                string query = @"SELECT nama_bibit, jenis_bibit, deskripsi, 
+                                 harga, stok
+                                 FROM bibit WHERE id_bibit = @id";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
@@ -86,11 +84,11 @@ namespace plantify.Controllers
                             return new Bibit(
                                 id,
                                 reader["nama_bibit"].ToString(),
-                                reader["kategori"].ToString(),
+                                reader["jenis_bibit"].ToString(),
                                 reader["deskripsi"].ToString(),
                                 Convert.ToDecimal(reader["harga"]),
                                 Convert.ToInt32(reader["stok"]),
-                                reader["satuan"].ToString()
+                                ""
                             );
                         }
                     }

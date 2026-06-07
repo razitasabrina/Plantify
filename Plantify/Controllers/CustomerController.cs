@@ -1,16 +1,16 @@
-﻿using Npgsql;
+﻿using System;
+using Npgsql;
 using plantify.Database;
 
 namespace plantify.Controllers
 {
     public class CustomerController
     {
-        // Cek apakah username sudah dipakai
         public bool UsernameExists(string username)
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = "SELECT COUNT(*) FROM customer WHERE username = @username";
+                string query = "SELECT COUNT(*) FROM users WHERE email = @username";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
@@ -19,12 +19,11 @@ namespace plantify.Controllers
             }
         }
 
-        // Cek apakah email sudah terdaftar
         public bool EmailExists(string email)
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = "SELECT COUNT(*) FROM customer WHERE email = @email";
+                string query = "SELECT COUNT(*) FROM users WHERE email = @email";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@email", email);
@@ -33,20 +32,19 @@ namespace plantify.Controllers
             }
         }
 
-        // Simpan customer baru ke database
         public void Register(string nama, string email, string username,
                              string password, string alamat, string noHp)
         {
             using (var conn = DBConnection.GetConnection())
             {
-                string query = @"INSERT INTO customer (nama, email, username, password, alamat, no_hp) 
-                                 VALUES (@nama, @email, @username, @password, @alamat, @noHp)";
+                string query = @"INSERT INTO users 
+                                (nama_user, email, passwords, alamat, no_telepon, is_admin) 
+                                VALUES (@nama, @email, @password, @alamat, @noHp, false)";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@nama", nama);
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
                     cmd.Parameters.AddWithValue("@alamat", alamat);
                     cmd.Parameters.AddWithValue("@noHp", noHp);
